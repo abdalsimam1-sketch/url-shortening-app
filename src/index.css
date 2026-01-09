@@ -1,7 +1,29 @@
+:root {
+}
+
 section a {
   text-decoration: none;
   color: grey;
 }
 .rounded-pill {
   background-color: rgb(3, 248, 248);
+}
+
+.boost-section {
+  background-image: url(src/assets/images/bg-boost-desktop.svg);
+  background-size: cover;
+}
+.link-section {
+  background-image: url(src/assets/images/bg-shorten-desktop.svg);
+  background-size: cover;
+}
+
+@media (max-width: 480px) {
+  .link-section {
+    background-image: url(src/assets/images/bg-shorten-mobile.svg);
+    background-size: cover;
+  }
+  .boost-section {
+    background-image: url(src/assets/images/bg-boost-boost.svg);
+  }
 }
