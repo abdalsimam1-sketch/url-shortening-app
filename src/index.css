@@ -1,0 +1,28 @@
+.card img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.924);
+  transform: translateY(-50%);
+}
+.footer img {
+  max-width: 10rem;
+  color: white;
+}
+footer a {
+  text-decoration: none;
+  color: grey;
+}
+.nav a {
+  text-decoration: none;
+  color: grey;
+}
+.shorten-inner {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .shorten-inner {
+    width: 70%;
+  }
+}
