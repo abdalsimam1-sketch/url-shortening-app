@@ -2,8 +2,40 @@ import pic from "../assets/images/illustration-working.svg";
 import brand from "../assets/images/icon-brand-recognition.svg";
 import drecords from "../assets/images/icon-detailed-records.svg";
 import fully from "../assets/images/icon-fully-customizable.svg";
+import { useState } from "react";
+import { shortenUrl } from "../services/apiCalls";
 
 export const Home = () => {
+  const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState("");
+  const [links, setLinks] = useState([]);
+  const [error, setError] = useState("");
+
+  const handleShorten = async () => {
+    if (!input.trim()) {
+      return;
+    }
+    setLoading(true);
+    setError("");
+    try {
+      const short = await shortenUrl(input);
+      setLinks((prev) =>
+        [
+          {
+            original: input,
+            short,
+            copied: false,
+          },
+          ...prev,
+        ].slice(0, 4)
+      );
+      setInput("");
+    } catch (err) {
+      setError("Please enter a valid URL");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <div className="home-page ">
@@ -32,15 +64,30 @@ export const Home = () => {
         >
           <div className="d-flex  flex-column gap-3 shorten-inner flex-md-row mx-auto">
             <input
+              onChange={(e) => setInput(e.target.value)}
+              value={input}
               type="text"
               className="form-control "
               placeholder="Paste link here ...."
             />
-            <button className="btn btn-success ">Shorten</button>
+            <button
+              className="btn btn-success "
+              onClick={handleShorten}
+              disabled={loading}
+            >
+              Shorten
+            </button>
           </div>
         </div>
 
-        <div className="recent-links mb-5"></div>
+        <div className="recent-links mb-5">
+          {links.map((link, index) => (
+            <div key={index}>
+              <span>{link.original}</span>
+              <a href="">{link.short}</a>
+            </div>
+          ))}
+        </div>
 
         <article className="article text-center mb-5 mx-5">
           <h1>Advanced Statistics</h1>
