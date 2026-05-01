@@ -182,3 +182,12 @@
   letter-spacing: var(--text-7-italic-letter-spacing);
   font-style: italic;
 }
+
+/* Home Page */
+.btn.signup-button,
+.btn.signup-button:hover {
+  background-color: var(--color-blue-400);
+}
+.links {
+  cursor: pointer;
+}
