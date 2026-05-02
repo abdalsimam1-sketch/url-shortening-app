@@ -6,7 +6,7 @@ import { mockData } from "../data/mockData";
 export const Home = () => {
   const [link, setLink] = useState("");
   return (
-    <main className="pb-5">
+    <main>
       <div className="container mb-5">
         <nav className="d-flex justify-content-between align-items-center mt-4">
           <div className="d-flex gap-5 align-items-center">
@@ -82,6 +82,46 @@ export const Home = () => {
         <button className="btn signup-button text-light rounded-pill">
           Get Started
         </button>
+      </section>
+      <section className="mt-5">
+        <footer className="bg-dark p-5 h-100 text-light text-center text-lg-start d-flex flex-column flex-lg-row justify-content-lg-around">
+          <div className="mb-3">
+            <img src={logo} alt="footer logo" style={{ filter: "invert(1)" }} />
+          </div>
+          <div className="d-flex flex-column gap-3 mb-3">
+            <span className="fw-bold">Features</span>
+            <div className="d-flex flex-column">
+              <span className="links">Link Shortening</span>
+              <span className="links">Branded Links</span>
+              <span className="links">Analytics</span>
+            </div>
+          </div>
+          <div className="d-flex flex-column gap-3 mb-3">
+            {" "}
+            <span className="fw-bold">Resources</span>
+            <div className="d-flex flex-column">
+              <span className="links">Blog</span>
+              <span className="links">Developers</span>
+              <span className="links">Support</span>
+            </div>
+          </div>
+          <div className="d-flex flex-column gap-3 mb-3">
+            {" "}
+            <span className="fw-bold">Company</span>
+            <div className="d-flex flex-column">
+              <span className="links">About</span>
+              <span className="links">Our Team</span>
+              <span className="links">Careers</span>
+              <span className="links">Contact</span>
+            </div>
+          </div>
+          <div className="text-light fs-3 d-flex gap-3 justify-content-center justify-content-lg-end">
+            <i className="bi bi-facebook"></i>
+            <i className="bi bi-twitter"></i>
+            <i className="bi bi-pinterest"></i>
+            <i className="bi bi-instagram"></i>
+          </div>
+        </footer>
       </section>
     </main>
   );
