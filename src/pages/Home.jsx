@@ -21,7 +21,13 @@ export const Home = () => {
             <span className="m-0 text-muted fw-bold links">Login</span>
             <button className="btn rounded-pill signup-button">Sign Up</button>
           </div>
-          <i className="bi bi-list btn fs-1 d-lg-none"></i>
+
+          <select className="form-select" style={{ maxWidth: "8rem" }}>
+            <option value="">Features</option>
+            <option value="">Pricing</option>
+            <option value="">Resources</option>
+            <option value="">Login</option>
+          </select>
         </nav>
         <section className="hero-section d-flex flex-column  flex-lg-row align-items-lg-center text-center text-lg-start">
           <div className="d-flex flex-column justify-content-center hero-text order-2 order-lg-1">
