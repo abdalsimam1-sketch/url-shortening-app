@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logo.svg";
+import heroPic from "../assets/images/illustration-working.svg";
 
 export const Home = () => {
   return (
@@ -19,6 +20,21 @@ export const Home = () => {
         </div>
         <i className="bi bi-list btn fs-1 d-lg-none"></i>
       </nav>
+      <section className="hero-section d-flex flex-column  flex-lg-row align-items-lg-center text-center text-lg-start">
+        <div className="d-flex flex-column justify-content-center hero-text order-2 order-lg-1">
+          <h1 className="text-1">More than just shorter links</h1>
+          <p className="text-4 mx-auto m-lg-0 " style={{ maxWidth: "25rem" }}>
+            Build your brand's recognition and get detailed insights on how your
+            links are performing
+          </p>
+          <button className="btn signup-button rounded-pill align-self-center align-self-lg-start my-3">
+            Get Started
+          </button>
+        </div>
+        <div className="hero-img order-1 order-lg-2">
+          <img src={heroPic} alt="hero section image" className="img-fluid" />
+        </div>
+      </section>
     </main>
   );
 };

@@ -191,3 +191,10 @@
 .links {
   cursor: pointer;
 }
+
+.hero-section {
+  min-height: 80vh;
+}
+.hero-section > div {
+  flex: 1;
+}
