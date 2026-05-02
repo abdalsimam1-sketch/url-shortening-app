@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.svg";
 import heroPic from "../assets/images/illustration-working.svg";
+import { mockData } from "../data/mockData";
 
 export const Home = () => {
   const [link, setLink] = useState("");
   return (
-    <main className="container">
+    <main className="container pb-5">
       <nav className="d-flex justify-content-between align-items-center mt-4">
         <div className="d-flex gap-5 align-items-center">
           <img src={logo} alt="logo" />
@@ -47,6 +48,32 @@ export const Home = () => {
           />
           <button className="btn signup-button">Shorten it!</button>
         </form>
+      </section>
+      <section className="description-section mt-4">
+        <div className="text-center">
+          <h2 className="text-2">Advanced Statistics</h2>
+          <p style={{ maxWidth: "25rem" }} className="mx-auto">
+            Track how your links are performing accross the web with our
+            advanced statistics dahsboard
+          </p>
+        </div>
+        <div className="row g-3">
+          {mockData.map((item, index) => (
+            <div key={index} className="col-12 col-md-8 mx-auto col-lg-4">
+              <div className="card position-relative p-4 h-100 mt-3">
+                <img
+                  src={item.img}
+                  alt={item.name + "logo"}
+                  width={70}
+                  style={{ borderRadius: "50%" }}
+                  className="bg-dark "
+                />
+                <h3 className="text-3">{item.name}</h3>
+                <p className="text-muted">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
