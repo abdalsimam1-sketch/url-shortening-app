@@ -198,3 +198,18 @@
 .hero-section > div {
   flex: 1;
 }
+
+.search-section {
+  background-image: url(./assets/images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: right;
+}
+
+@media (min-width: 768px) {
+  .search-section {
+    background-image: url(./assets/images/bg-boost-desktop.svg);
+  }
+}
+@media (min-width: 1024px) {
+}

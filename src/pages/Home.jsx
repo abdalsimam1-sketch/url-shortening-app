@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.svg";
 import heroPic from "../assets/images/illustration-working.svg";
 
 export const Home = () => {
+  const [link, setLink] = useState("");
   return (
     <main className="container">
       <nav className="d-flex justify-content-between align-items-center mt-4">
@@ -34,6 +35,18 @@ export const Home = () => {
         <div className="hero-img order-1 order-lg-2">
           <img src={heroPic} alt="hero section image" className="img-fluid" />
         </div>
+      </section>
+      <section className="search-section p-5 bg-dark rounded mt-3 m-md-0">
+        <form className="d-flex flex-column gap-3 flex-md-row text-nowrap ">
+          <input
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+            type="text"
+            className="form-control ps-4"
+            placeholder="Shorten link here"
+          />
+          <button className="btn signup-button">Shorten it!</button>
+        </form>
       </section>
     </main>
   );
